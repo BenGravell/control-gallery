@@ -20,7 +20,7 @@ Links
 Dependencies
 ============
 
-The Control Systems Gallery package requires NumPy, SciPy, Matplotlib, and the Python Control packages. 
+The Control Systems Gallery package requires the NumPy package. 
 
 
 Installation
