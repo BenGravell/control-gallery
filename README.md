@@ -61,6 +61,4 @@ Contributing
 ------------
 
 Your contributions are welcome!  Simply fork the GitHub repository and send a
-`pull request`_.
-
-.. _pull request: https://github.com/BenGravell/control-gallery/pulls
+`pull request`_... _pull request: https://github.com/BenGravell/control-gallery/pulls
