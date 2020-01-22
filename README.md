@@ -75,3 +75,12 @@ Contributing
 
 Your contributions are welcome!  Simply fork the GitHub repository and send a
 [pull request](https://github.com/BenGravell/control-gallery/pulls).
+
+
+Icons made by
+<a href="https://www.flaticon.com/authors/smashicons" title="Smashicons">Smashicons</a>, 
+<a href="https://www.flaticon.com/authors/eucalyp" title="Eucalyp">Eucalyp</a>,
+<a href="https://www.flaticon.com/authors/pixel-perfect" title="Pixel perfect">Pixel perfect</a>, 
+<a href="https://www.flaticon.com/authors/smalllikeart" title="smalllikeart">smalllikeart</a>, and
+<a href="https://www.flaticon.com/authors/freepik" title="Freepik">Freepik</a>
+from <a href="https://www.flaticon.com/" title="Flaticon"> www.flaticon.com</a>.
