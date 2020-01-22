@@ -19,7 +19,7 @@ the analysis and design of feedback control with a focus on state-space models.
 
 # Conventions
 
-- System parameters are stored in dictionaries as pickle files
+- System parameters are stored in dictionaries as [pickle](https://docs.python.org/3/library/pickle.html) files
 - System definitions are catalogued by a unique system ID number with format 'cXXXXXXXXXX'
   - 'c' is a character 'c' or 'd' corresponding to continuous-time or discrete-time
   - 'XXXXXXXXXX' is a unique 10-digit integer
