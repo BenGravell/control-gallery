@@ -1,27 +1,24 @@
 ![Control gallery](control-gallery.png)
 
-Control Systems Gallery
-=======================
+# Control Systems Gallery
 
 The Control Systems Gallery is a Python module that documents a standard collection of systems for use in
 the analysis and design of feedback control with a focus on state-space models.
 
 
-Features
---------
+# Features
 
 - Continuous-time and discrete-time systems
 - Easy integration with the [Python Control package](https://github.com/python-control/python-control)
 
 
-Links
-=====
+# Links
 
 - TBD
 
 
-Conventions
-===========
+# Conventions
+
 - System parameters are stored in dictionaries as pickle files
 - System definitions are catalogued by a unique system ID number with format 'cXXXXXXXXXX'
   - 'c' is a character 'c' or 'd' corresponding to continuous-time or discrete-time
@@ -30,48 +27,39 @@ Conventions
 - Additional parameters are stored as needed e.g. C and D matrices
 - Column and row vectors are treated as single-dimensional NumPy arrays
 
-Dependencies
-============
+# Dependencies
 
 The Control Systems Gallery package requires the NumPy package. 
 
 
-Installation
-============
+# Installation
 
-Conda and conda-forge
----------------------
+## Conda and conda-forge
 
 TBD
 
-Pip
----
+## Pip
 
 TBD
 
 
-Development
-===========
+# Development
 
-Code
-----
+## Code
 
-You can check out the latest version of the source code with the command::
+You can check out the latest version of the source code with the command:
 
   git clone https://github.com/BenGravell/control-gallery.git
 
-Testing
--------
+## Testing
 
 TBD
 
-License
--------
+## License
 
 TBD
 
-Contributing
-------------
+## Contributing
 
 Your contributions are welcome!  Simply fork the GitHub repository and send a
 [pull request](https://github.com/BenGravell/control-gallery/pulls).
