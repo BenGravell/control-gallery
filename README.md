@@ -29,7 +29,9 @@ the analysis and design of feedback control with a focus on state-space models.
 
 # Dependencies
 
-The Control Systems Gallery package requires the NumPy package. 
+The Control Systems Gallery package requires the NumPy package.
+
+Developed and tested with Python 3.7
 
 
 # Installation
