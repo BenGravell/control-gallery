@@ -18,13 +18,17 @@ the analysis and design of feedback control with a focus on state-space models.
 
 
 # Conventions
-
-- System parameters are stored in dictionaries as [pickle](https://docs.python.org/3/library/pickle.html) files
-- System definitions are catalogued by a unique system ID number with format 'cXXXXXXXXXX'
-  - 'c' is a character 'c' or 'd' corresponding to continuous-time or discrete-time
-  - 'XXXXXXXXXX' is a unique 10-digit integer
-- At a minimum each system must have A and B matrices
-- Additional parameters are stored as needed e.g. C and D matrices
+- Individual system definitions are stored in dictionaries as a [pickle](https://docs.python.org/3/library/pickle.html) file keyed to a unique 10-digit integer system ID
+  - IDs 0000000000 thru 4999999999 are reserved for continuous-time systems
+  - IDs 5000000000 thru 9999999999 are reserved for discrete-time systems
+- At a minimum each system must have:
+  - Time type, continuous ('c') or discrete ('d')
+  - Dynamics representation, state-space ('ss') or transfer function ('tf')
+  - Either A, B, C, and D matrices (state-space representation) or a transfer function G (transfer function representation)
+    - If C and D matrices were not specified in source materials then C and D are NoneType
+- Additional parameters are stored as needed
+  - Consult the source material (listed in metadata) for detailed description
+- Metadata is stored in the dictionary as well if available
 - Column and row vectors are treated as single-dimensional NumPy arrays
 
 # Dependencies
