@@ -1,4 +1,4 @@
-![Control gallery](control-gallery.png)
+![Control gallery](logo/control-gallery.png)
 
 # Control Systems Gallery
 
