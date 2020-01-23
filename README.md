@@ -28,7 +28,7 @@ the analysis and design of feedback control with a focus on state-space models.
     - If C and D matrices were not specified in source materials then C and D are NoneType
 - Additional parameters are stored as needed
   - Consult the source material (listed in metadata) for detailed description
-- Metadata is stored in the dictionary as well if available
+- Metadata (system description, source paper, authors, notes) is stored in the dictionary if available
 - Column and row vectors are treated as single-dimensional NumPy arrays
 
 # Dependencies
