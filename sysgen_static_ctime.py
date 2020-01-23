@@ -1,11 +1,18 @@
 import numpy as np
 from gallery_io import save_system
 
-# Continuous-time linear time invariant system parameters
+# Continuous-time, linear time invariant, state-space representation system parameters
 time_type = 'c'
+dyn_rep = 'ss'
 
-# Two-mass-spring system in the paper
-# "Benchmark Problems for Robust Control Design" by Bong Wie and Dennis S. Bernstein
+
+description = "Two-mass-spring system"
+source_paper = "Benchmark Problems for Robust Control Design"
+source_authors = ['Wie', 'Bernstein']
+notes = None
+metadata_keys = ['description', 'source_paper', 'source_authors', 'notes']
+metadata_values = [description, source_paper, source_authors, notes]
+
 system_id = 1
 m1 = 1
 m2 = 1
@@ -16,25 +23,24 @@ A = np.array([[0, 0, 1, 0],
               [k/m2, -k/m2, 0, 0]])
 B = np.array([0, 0, 1/m1, 0])
 C = np.array([0, 1, 0, 0])
-D = np.array([0])
+D = np.array(0)
 
-keys = ['time_type', 'system_id', 'A', 'B', 'C', 'D']
-values = [time_type, system_id, A, B, C, D]
-save_system(time_type, system_id, keys, values)
-
-# Inverted pendulum
-system_id = 2
+keys = ['time_type', 'dyn_rep', 'A', 'B', 'C', 'D'] + metadata_keys
+values = [time_type, dyn_rep, A, B, C, D] + metadata_values
+system = dict(zip(keys, values))
+save_system(system_id, system)
 
 
-
-# The 9000 series of problems are taken from the IFAC report
-# "Benchmark Problems for Control System Design" by Davison et al.
-
-# Binary distillation column
-# "This problem describes a fairly realistic model of a binary distillation column,
-# and has the feature that pressure variation is included in the model's description;
-# the system is multivariable, with 3 inputs and 3 outputs, and includes one disturbance input"
-# The system A matrix has almost a banded diagonal structure with 11 states, 3 of which are directly measured as output
+description = "Binary distillation column"
+source_paper = "Benchmark Problems for Control System Design"
+source_authors = ['Davison']
+notes = "This problem describes a fairly realistic model of a binary distillation column,\n" + \
+        "and has the feature that pressure variation is included in the model's description;\n" + \
+        "the system is multivariable, with 3 inputs and 3 outputs, and includes one disturbance input.\n" + \
+        "The system A matrix has an almost banded diagonal structure with 11 states,\n" + \
+        "3 of which are directly measured as output."
+metadata_keys = ['description', 'source_paper', 'source_authors', 'notes']
+metadata_values = [description, source_paper, source_authors, notes]
 system_id = 9001
 A = np.array([[-1.40e-02, +4.30e-03, +0.00e+00, +0.00e+00, +0.00e+00, +0.00e+00, +0.00e+00, +0.00e+00, +0.00e+00, +0.00e+00, +0.00e+00],
               [+9.50e-03, -1.38e-02, +4.60e-03, +0.00e+00, +0.00e+00, +0.00e+00, +0.00e+00, +0.00e+00, +0.00e+00, +0.00e+00, +5.00e-04],
@@ -63,16 +69,20 @@ C = np.array([[+0.00e+00, +0.00e+00, +0.00e+00, +0.00e+00, +0.00e+00, +0.00e+00,
               [+0.00e+00, +0.00e+00, +0.00e+00, +0.00e+00, +0.00e+00, +0.00e+00, +0.00e+00, +0.00e+00, +0.00e+00, +0.00e+00, +1.00e+00]])
 D = np.zeros([3, 3])
 E = np.array([+0.00e+00, +0.00e+00, +0.00e+00, +0.00e+00, +1.00e-02, +0.00e+00, +0.00e+00, +0.00e+00, +0.00e+00, +0.00e+00, +0.00e+00])
+keys = ['time_type', 'dyn_rep', 'A', 'B', 'C', 'D', 'E'] + metadata_keys
+values = [time_type, dyn_rep, A, B, C, D, E] + metadata_values
+system = dict(zip(keys, values))
+save_system(system_id, system)
 
-keys = ['time_type', 'system_id', 'A', 'B', 'C', 'D', 'E']
-values = [time_type, system_id, A, B, C, D, E]
-save_system(time_type, system_id, keys, values)
 
-
-# Drum boiler
-# "This problem describes a fairly realistic model of a drum boiler
-# and has the feature of being multivariable, unstable, and non-minimum phase"
-# NOTE: Problem has a variation where the third input is not used
+description = "Drum boiler"
+source_paper = "Benchmark Problems for Control System Design"
+source_authors = ['Davison']
+notes = "This problem describes a fairly realistic model of a drum boiler\n" + \
+        "and has the feature of being multivariable, unstable, and non-minimum phase.\n" + \
+        "Problem has a variation where the third input is not used."
+metadata_keys = ['description', 'source_paper', 'source_authors', 'notes']
+metadata_values = [description, source_paper, source_authors, notes]
 system_id = 9002
 A = np.array([[-3.93e+00, -3.15e-03, +0.00e+00, +0.00e+00, +0.00e+00, +4.03e-05, +0.00e+00, +0.00e+00, +0.00e+00],
               [+3.68e+02, -3.05e+00, +3.03e+00, +0.00e+00, +0.00e+00, -3.77e-03, +0.00e+00, +0.00e+00, +0.00e+00],
@@ -97,6 +107,7 @@ C = np.array([[+0.00e+00, +0.00e+00, +0.00e+00, +0.00e+00, +0.00e+00, +1.00e+00,
 D = np.zeros([2, 3])
 E = np.array([-1.00e-02, +0.00e+00, +0.00e+00, +0.00e+00, +5.20e+01, +0.00e+00, +0.00e+00, +0.00e+00, +0.00e+00])
 
-keys = ['time_type', 'system_id', 'A', 'B', 'C', 'D', 'E']
-values = [time_type, system_id, A, B, C, D, E]
-save_system(time_type, system_id, keys, values)
+keys = ['time_type', 'dyn_rep', 'A', 'B', 'C', 'D', 'E'] + metadata_keys
+values = [time_type, dyn_rep, A, B, C, D, E] + metadata_values
+system = dict(zip(keys, values))
+save_system(system_id, system)
