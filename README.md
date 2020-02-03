@@ -2,7 +2,7 @@
 
 # Control Systems Gallery
 
-The Control Systems Gallery is a Python module that documents a standard collection of systems for use in
+The Control Systems Gallery is a Python module that documents a collection of standard systems for use in
 the analysis and design of feedback control with a focus on state-space models.
 
 
