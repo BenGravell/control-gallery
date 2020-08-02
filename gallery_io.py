@@ -7,9 +7,10 @@ def filenamer(system_id):
     return filename
 
 def pather(system_id):
-    directory = 'systems'
+    location = os.path.realpath(os.path.join(os.getcwd(), os.path.dirname(__file__)))
+    systems_directory = 'systems'
     filename = filenamer(system_id)
-    path = os.path.join(directory, filename)
+    path = os.path.join(location, systems_directory, filename)
     return path
 
 def save_system(system_id, system):

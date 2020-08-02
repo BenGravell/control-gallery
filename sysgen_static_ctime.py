@@ -7,12 +7,12 @@ dyn_rep = 'ss'
 
 
 description = "Two-mass-spring system"
-source_paper = "Benchmark Problems for Robust Control Design"
+source_title = "Benchmark Problems for Robust Control Design"
 source_authors = ['Wie', 'Bernstein']
+source_url = "https://arc.aiaa.org/doi/abs/10.2514/3.20949"
 notes = None
-metadata_keys = ['description', 'source_paper', 'source_authors', 'notes']
-metadata_values = [description, source_paper, source_authors, notes]
-
+metadata_keys = ['description', 'source_title', 'source_authors', 'source_url', 'notes']
+metadata_values = [description, source_title, source_authors, source_url, notes]
 system_id = 1
 m1 = 1
 m2 = 1
@@ -31,16 +31,43 @@ system = dict(zip(keys, values))
 save_system(system_id, system)
 
 
+description = "Ball and beam"
+source_title = "Control Tutorials for MATLAB and Simulink"
+source_authors = ["Messner", "Tilbury"]
+source_url = "http://ctms.engin.umich.edu/CTMS/index.php?example=BallBeam&section=SystemModeling"
+notes = None
+metadata_keys = ['description', 'source_title', 'source_authors', 'source_url', 'notes']
+metadata_values = [description, source_title, source_authors, source_url, notes]
+system_id = 107
+m = 0.11
+g = 9.8
+J = 9.99e-6
+R = 0.015
+H = -m*g/(J/(R**2)+m)
+A = np.array([[0, 1, 0, 0],
+              [0, 0, H, 0],
+              [0, 0, 0, 1],
+              [0, 0, 0, 0]])
+B = np.array([0, 0, 0, 1])
+C = np.array([1, 0, 0, 0])
+D = np.array([0])
+keys = ['time_type', 'dyn_rep', 'A', 'B', 'C', 'D'] + metadata_keys
+values = [time_type, dyn_rep, A, B, C, D] + metadata_values
+system = dict(zip(keys, values))
+save_system(system_id, system)
+
+
 description = "Binary distillation column"
-source_paper = "Benchmark Problems for Control System Design"
+source_title = "Benchmark Problems for Control System Design"
 source_authors = ['Davison']
+source_url = "https://taskforce.ifac-control.org/industry-committee/reference-materials/benchmark-problems-for-control-system-design/view"
 notes = "This problem describes a fairly realistic model of a binary distillation column,\n" + \
         "and has the feature that pressure variation is included in the model's description;\n" + \
         "the system is multivariable, with 3 inputs and 3 outputs, and includes one disturbance input.\n" + \
         "The system A matrix has an almost banded diagonal structure with 11 states,\n" + \
         "3 of which are directly measured as output."
-metadata_keys = ['description', 'source_paper', 'source_authors', 'notes']
-metadata_values = [description, source_paper, source_authors, notes]
+metadata_keys = ['description', 'source_title', 'source_authors', 'source_url', 'notes']
+metadata_values = [description, source_title, source_authors, source_url, notes]
 system_id = 9001
 A = np.array([[-1.40e-02, +4.30e-03, +0.00e+00, +0.00e+00, +0.00e+00, +0.00e+00, +0.00e+00, +0.00e+00, +0.00e+00, +0.00e+00, +0.00e+00],
               [+9.50e-03, -1.38e-02, +4.60e-03, +0.00e+00, +0.00e+00, +0.00e+00, +0.00e+00, +0.00e+00, +0.00e+00, +0.00e+00, +5.00e-04],
@@ -76,13 +103,14 @@ save_system(system_id, system)
 
 
 description = "Drum boiler"
-source_paper = "Benchmark Problems for Control System Design"
+source_title = "Benchmark Problems for Control System Design"
 source_authors = ['Davison']
+source_url = "https://taskforce.ifac-control.org/industry-committee/reference-materials/benchmark-problems-for-control-system-design/view"
 notes = "This problem describes a fairly realistic model of a drum boiler\n" + \
         "and has the feature of being multivariable, unstable, and non-minimum phase.\n" + \
         "Problem has a variation where the third input is not used."
-metadata_keys = ['description', 'source_paper', 'source_authors', 'notes']
-metadata_values = [description, source_paper, source_authors, notes]
+metadata_keys = ['description', 'source_title', 'source_authors', 'source_url', 'notes']
+metadata_values = [description, source_title, source_authors, source_url, notes]
 system_id = 9002
 A = np.array([[-3.93e+00, -3.15e-03, +0.00e+00, +0.00e+00, +0.00e+00, +4.03e-05, +0.00e+00, +0.00e+00, +0.00e+00],
               [+3.68e+02, -3.05e+00, +3.03e+00, +0.00e+00, +0.00e+00, -3.77e-03, +0.00e+00, +0.00e+00, +0.00e+00],

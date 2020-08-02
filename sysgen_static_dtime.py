@@ -8,12 +8,13 @@ dyn_rep = 'ss'
 
 
 description = "F-16 aircraft short period dynamics"
-source_paper = "Model-free Q-learning designs for linear discrete-time zero-sum games with application to H-infinity control"
+source_title = "Model-free Q-learning designs for linear discrete-time zero-sum games with application to H-infinity control"
 source_authors = ['Al-Tamimi', 'Lewis', 'Abu-Khalaf']
+source_url = "https://ieeexplore.ieee.org/document/7068263"
 notes = "Based on the continuous-time system in Chapter 3 of the textbook\n" + \
         "'Aircraft Control and Simulation' by Stevens, Lewis, and Johnson"
-metadata_keys = ['description', 'source_paper', 'source_authors', 'notes']
-metadata_values = [description, source_paper, source_authors, notes]
+metadata_keys = ['description', 'source_title', 'source_authors', 'source_url', 'notes']
+metadata_values = [description, source_title, source_authors, source_url, notes]
 system_id = 5000000001
 A = np.array([[0.906488, 0.0816012, -0.0005],
               [0.0741349, 0.90121, -0.000708383],
@@ -31,11 +32,12 @@ save_system(system_id, system)
 
 
 description = "Marginally unstable graph Laplacian system with diffusion dynamics"
-source_paper = "On the Sample Complexity of the Linear Quadratic Regulator"
+source_title = "On the Sample Complexity of the Linear Quadratic Regulator"
 source_authors = ['Dean', 'Mania', 'Matni', 'Recht', 'Tu']
+source_url = "https://link.springer.com/article/10.1007/s10208-019-09426-y"
 notes = None
-metadata_keys = ['description', 'source_paper', 'source_authors', 'notes']
-metadata_values = [description, source_paper, source_authors, notes]
+metadata_keys = ['description', 'source_title', 'source_authors', 'source_url', 'notes']
+metadata_values = [description, source_title, source_authors, source_url, notes]
 system_id = 5000000002
 A = np.array([[1.01, 0.01, 0.00],
               [0.01, 1.01, 0.01],
@@ -52,11 +54,12 @@ save_system(system_id, system)
 
 
 description = "Simple diagonal system"
-source_paper = "The driver and the engineer: Reinforcement learning and robust control"
+source_title = "The driver and the engineer: Reinforcement learning and robust control"
 source_authors = ['Bernat', 'Chen', 'Matni', 'Doyle']
+source_url = "https://nikolaimatni.github.io/files/bernat2020driver.pdf"
 notes = "alpha parameter selected according to point given in the paper described as the 'uncontrollable regime'"
-metadata_keys = ['description', 'source_paper', 'source_authors', 'notes']
-metadata_values = [description, source_paper, source_authors, notes]
+metadata_keys = ['description', 'source_title', 'source_authors', 'source_url', 'notes']
+metadata_values = [description, source_title, source_authors, source_url, notes]
 system_id = 5000000200
 alpha = 0.02
 A = np.array([[1+alpha, 0],
@@ -69,12 +72,14 @@ values = [time_type, dyn_rep, A, B, C, D, alpha] + metadata_values
 system = dict(zip(keys, values))
 save_system(system_id, system)
 
+
 description = "Simple diagonal system"
-source_paper = "The driver and the engineer: Reinforcement learning and robust control"
+source_title = "The driver and the engineer: Reinforcement learning and robust control"
 source_authors = ['Bernat', 'Chen', 'Matni', 'Doyle']
+source_url = "https://nikolaimatni.github.io/files/bernat2020driver.pdf"
 notes = "alpha parameter selected according to point given in the paper described as the 'benign regime'"
-metadata_keys = ['description', 'source_paper', 'source_authors', 'notes']
-metadata_values = [description, source_paper, source_authors, notes]
+metadata_keys = ['description', 'source_title', 'source_authors', 'source_url', 'notes']
+metadata_values = [description, source_title, source_authors, source_url, notes]
 system_id = 5000000201
 alpha = 0.6
 A = np.array([[1+alpha, 0],
@@ -87,12 +92,14 @@ values = [time_type, dyn_rep, A, B, C, D, alpha] + metadata_values
 system = dict(zip(keys, values))
 save_system(system_id, system)
 
+
 description = "Simple diagonal system"
-source_paper = "The driver and the engineer: Reinforcement learning and robust control"
+source_title = "The driver and the engineer: Reinforcement learning and robust control"
 source_authors = ['Bernat', 'Chen', 'Matni', 'Doyle']
+source_url = "https://nikolaimatni.github.io/files/bernat2020driver.pdf"
 notes = "alpha parameter selected according to point given in the paper described as the 'unstable regime'"
-metadata_keys = ['description', 'source_paper', 'source_authors', 'notes']
-metadata_values = [description, source_paper, source_authors, notes]
+metadata_keys = ['description', 'source_title', 'source_authors', 'source_url', 'notes']
+metadata_values = [description, source_title, source_authors, source_url, notes]
 system_id = 5000000202
 alpha = 8
 A = np.array([[1+alpha, 0],
@@ -107,14 +114,15 @@ save_system(system_id, system)
 
 
 description = "Cold rolling mill"
-source_paper = "Benchmark Problems for Control System Design"
+source_title = "Benchmark Problems for Control System Design"
 source_authors = ['Davison']
+source_url = "https://taskforce.ifac-control.org/industry-committee/reference-materials/benchmark-problems-for-control-system-design/view"
 notes = "This problem deals with a two-stand cold rolling mill.\n" + \
         "The process dynamics are dominated by the interstand time delay.\n" + \
         "A discrete 10th order model is given.\n" + \
         "The model includes disturbances, is multivariable and strongly interacting."
-metadata_keys = ['description', 'source_paper', 'source_authors', 'notes']
-metadata_values = [description, source_paper, source_authors, notes]
+metadata_keys = ['description', 'source_title', 'source_authors', 'source_url', 'notes']
+metadata_values = [description, source_title, source_authors, source_url, notes]
 system_id = 5000009004
 A = np.array([[0, 0, 0, 0, 0, 0, 0, 0, 0, 0.112],
               [1, 0, 0, 0, 0, 0, 0, 0, 0, 0],
